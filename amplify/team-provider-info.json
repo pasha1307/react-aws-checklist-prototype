@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-checklistapp-dev-141845-authRole",
+      "UnauthRoleArn": "arn:aws:iam::499508998546:role/amplify-checklistapp-dev-141845-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::499508998546:role/amplify-checklistapp-dev-141845-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-checklistapp-dev-141845-deployment",
+      "UnauthRoleName": "amplify-checklistapp-dev-141845-unauthRole",
+      "StackName": "amplify-checklistapp-dev-141845",
+      "StackId": "arn:aws:cloudformation:us-east-1:499508998546:stack/amplify-checklistapp-dev-141845/cce4ae10-c7bc-11eb-89ff-0a374cd00e27",
+      "AmplifyAppId": "deovurazlrybp"
+    },
+    "categories": {
+      "auth": {
+        "checklistapp73c527dd": {}
+      }
+    }
+  }
+}

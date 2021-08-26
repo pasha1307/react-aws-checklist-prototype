@@ -1,0 +1,37 @@
+const payload = (arr, form) => {
+    return {
+        targetDate: form.targetDate,
+        preparedBy: form.preparedBy,
+        reviewedBy: form.reviewedBy,
+        reviewerComments: form.comment,
+        createdAt: form.createdAt,
+        changeDesc: form.changeDesc,
+        timeLimitsDesc: form.timeLimitsDesc,
+        publishingLimitsDesc: form.publishLimits,
+        scaleProjected: form.scaleProjected,
+        appName: form.appName,
+        appId: form.appId,
+        appSize: form.appSize,
+        status: form.revStatus,
+        revLob: form.lob,
+        revBrief: form.qsBrief,
+        revCatalogs: [arr.catalog],
+        revQvfiles: [],
+        revExtensions: [arr.ext],
+        revComponents: [arr.component],
+        revPlatforms: [arr.platformInUse],
+        revApprovals: [arr.approval],
+        stdOverall:[arr.rewOverall],
+        stdDatamodel:[arr.rewDataModel],
+        stdInterface:[arr.rewInterface],
+        stdThreshold: [arr.rewThreshold],
+        flaggedOverall:[arr.flagOverall],
+        flaggedDatasource:[arr.flagDS],
+        flaggedDatamodel:[arr.flagDM],
+        flaggedInterface:[arr.flagUI],
+        flaggedDesign:[arr.flagDesign],
+        flaggedScript:[arr.flagScript],
+    }
+}
+
+export default payload;

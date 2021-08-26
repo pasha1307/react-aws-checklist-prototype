@@ -1,0 +1,151 @@
+type Review @model @searchable {
+  id: ID!
+  targetDate: String
+  preparedBy: String
+  reviewedBy: String
+  reviewerComments: String
+  createdAt: String
+  changeDesc: String
+  timeLimitsDesc: String
+  publishingLimitsDesc: String
+  scaleProjected: String
+  appName: String
+  appId: String
+  appSize: String
+  status: String
+  revBrief: String
+  revLob: String
+  revCatalogs: [String]
+  revQvfiles: [String]
+  revExtensions: [String]
+  revComponents: [String]
+  revPlatforms: [String]
+  revApprovals: [String]
+  stdOverall: [String]
+  stdDatamodel: [String]
+  stdInterface: [String]
+  stdThreshold: [String]
+  flaggedOverall: [String]
+  flaggedDatasource: [String]
+  flaggedDatamodel: [String]
+  flaggedInterface: [String]
+  flaggedDesign: [String]
+  flaggedScript: [String]
+  lobs: [Lob] @connection(name: "ReviewLob")
+  briefs: [Brief] @connection(name: "ReviewBrief")
+  catalogs: [Catalog] @connection(name: "ReviewCatalog")
+  qvfFiles: [QVF] @connection(name: "ReviewQVF")
+  extensions: [Extension] @connection(name: "ReviewExtension")
+  components: [Component] @connection(name: "ReviewComponent")
+  platforms: [Platform] @connection(name: "ReviewPlatform")
+  intakeApprovals: [Approval] @connection(name: "ReviewApproval")
+  overall: [Overall] @connection(name: "ReviewOverall")
+  datasources: [DataSource] @connection(name: "ReviewDataSource")
+  datamodels: [DataModel] @connection(name: "ReviewDataModel")
+  interfaces: [UserInterface] @connection(name: "ReviewInterface")
+  designs: [AppDesign] @connection(name: "ReviewAppDesign")
+  scripts: [Script] @connection(name: "ReviewScript")
+  file: S3Object
+}
+
+type S3Object {
+  bucket: String!
+  region: String!
+  key: String!
+}
+type Approval @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewApproval")
+}
+
+type Platform @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewPlatform")
+}
+
+type Component @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewComponent")
+}
+
+type Extension @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewExtension")
+}
+
+type QVF @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewQVF")
+}
+
+type Lob @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewLob")
+}
+
+type Brief @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewBrief")
+}
+
+type Catalog @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewCatalog")
+}
+
+type Overall @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewOverall")
+}
+type DataSource @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewDataSource")
+}
+
+type DataModel @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewDataModel")
+}
+
+type UserInterface @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewInterface")
+}
+
+type AppDesign @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewAppDesign")
+}
+
+type Script @model {
+  id: ID!
+  label: String
+  value: String
+  review: Review @connection(name: "ReviewScript")
+}
